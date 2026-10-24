@@ -46,7 +46,7 @@ export const VeriLabModal: React.FC<VeriLabModalProps> = ({ isOpen, onClose }) =
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-slate-400 hover:text-white p-1 rounded-lg hover:bg-slate-800 transition-colors"
+          className="absolute top-4 right-4 text-slate-600 hover:text-white p-1 rounded-lg hover:bg-slate-800 transition-colors"
         >
           <X className="w-5 h-5" />
         </button>
@@ -57,13 +57,13 @@ export const VeriLabModal: React.FC<VeriLabModalProps> = ({ isOpen, onClose }) =
             <Server className="w-5 h-5" />
           </div>
           <div>
-            <h3 className="text-base font-bold text-white">VeriLab AI Microservice Bridge</h3>
-            <p className="text-xs text-slate-400">Integrasi API Produksi di Render Cloud Docker</p>
+            <h3 className="text-base font-bold text-slate-900">VeriLab AI Microservice Bridge</h3>
+            <p className="text-xs text-slate-600">Integrasi API Produksi di Render Cloud Docker</p>
           </div>
         </div>
 
         {/* Endpoint Info */}
-        <div className="p-3 rounded-xl bg-slate-950 border border-slate-800 font-mono text-xs text-slate-300 space-y-1">
+        <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 font-mono text-xs text-slate-700 space-y-1">
           <div className="text-[10px] text-slate-500 uppercase">Target Endpoint:</div>
           <div className="text-emerald-400 font-semibold break-all">
             https://verilab-api.onrender.com/api/v1/health
@@ -72,7 +72,7 @@ export const VeriLabModal: React.FC<VeriLabModalProps> = ({ isOpen, onClose }) =
 
         {/* Result Box */}
         {status === 'loading' && (
-          <div className="p-6 rounded-xl bg-slate-950/60 border border-slate-800 flex flex-col items-center justify-center text-xs text-slate-300 gap-2">
+          <div className="p-6 rounded-xl bg-slate-950/60 border border-slate-800 flex flex-col items-center justify-center text-xs text-slate-700 gap-2">
             <RefreshCw className="w-6 h-6 text-indigo-400 animate-spin" />
             <span>Menghubungi VeriLab AI Engine di Render...</span>
           </div>
@@ -89,7 +89,7 @@ export const VeriLabModal: React.FC<VeriLabModalProps> = ({ isOpen, onClose }) =
                 {latency} ms
               </span>
             </div>
-            <pre className="text-[11px] font-mono text-slate-300 bg-slate-950 p-2.5 rounded-lg border border-slate-800 overflow-x-auto">
+            <pre className="text-[11px] font-mono text-slate-700 bg-slate-950 p-2.5 rounded-lg border border-slate-800 overflow-x-auto">
               {JSON.stringify(responseDetails, null, 2)}
             </pre>
           </div>
@@ -101,15 +101,15 @@ export const VeriLabModal: React.FC<VeriLabModalProps> = ({ isOpen, onClose }) =
               <AlertCircle className="w-4 h-4 text-amber-400" />
               Instance Render Sedang Warming Up (Cold-Start)
             </div>
-            <p className="text-[11px] text-slate-300 leading-relaxed">
+            <p className="text-[11px] text-slate-700 leading-relaxed">
               Layanan backend gratis Render masuk ke mode tidur jika tidak ada request selama 15 menit. Request pertama membutuhkan waktu ~30-50 detik untuk booting kontainer Docker. Silakan coba lagi.
             </p>
           </div>
         )}
 
         {status === 'idle' && (
-          <div className="p-4 rounded-xl bg-slate-950/50 border border-slate-800 text-xs text-slate-400 space-y-2">
-            <div className="flex items-center gap-2 text-slate-200 font-semibold">
+          <div className="p-4 rounded-xl bg-slate-950/50 border border-slate-800 text-xs text-slate-600 space-y-2">
+            <div className="flex items-center gap-2 text-slate-800 font-semibold">
               <Shield className="w-4 h-4 text-indigo-400" />
               <span>Verifikasi Keabsahan Statistik Naskah</span>
             </div>
@@ -142,7 +142,7 @@ export const VeriLabModal: React.FC<VeriLabModalProps> = ({ isOpen, onClose }) =
             </button>
             <button
               onClick={onClose}
-              className="px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-300"
+              className="px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-700"
             >
               Tutup
             </button>
