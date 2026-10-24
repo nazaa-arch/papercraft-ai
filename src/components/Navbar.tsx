@@ -84,9 +84,9 @@ export const Navbar: React.FC<NavbarProps> = ({
             }}
             className="bg-slate-800 border border-slate-700 text-slate-200 text-xs rounded-xl px-3 py-2 outline-none focus:border-indigo-500 transition-colors cursor-pointer max-w-[190px] sm:max-w-none truncate"
           >
-            {SAMPLE_PAPERS.map(p => (
+            {SAMPLE_PAPERS.map((p, idx) => (
               <option key={p.id} value={p.id}>
-                📄 {p.id === 'cyberbullying-hybrid-stacking' ? 'Paper 1: Cyberbullying Hybrid Stacking' : 'Paper 2: Sensor Metrology GPR'}
+                📄 Contoh {idx + 1}: {p.title.length > 36 ? p.title.slice(0, 36) + '...' : p.title}
               </option>
             ))}
           </select>
