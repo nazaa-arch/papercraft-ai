@@ -26,7 +26,7 @@ export const AuditPanel: React.FC<AuditPanelProps> = ({ report, onOpenVeriLabMod
             </div>
           </div>
           <div className="text-right">
-            <span className="inline-block px-2.5 py-1 rounded-full text-xs font-bold font-mono bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+            <span className="inline-block px-2.5 py-1 rounded-full text-xs font-bold font-mono bg-emerald-100 text-emerald-800 border border-emerald-300 font-bold">
               {report.journalReadiness.scopusTarget}
             </span>
             <div className="text-[11px] text-slate-600 mt-1">
@@ -49,7 +49,7 @@ export const AuditPanel: React.FC<AuditPanelProps> = ({ report, onOpenVeriLabMod
         <button
           onClick={() => setActiveTab('imrad')}
           className={`py-1.5 rounded-lg font-medium transition-all flex items-center justify-center gap-1.5 ${
-            activeTab === 'imrad' ? 'bg-indigo-600 text-white shadow' : 'text-slate-600 hover:text-slate-900'
+            activeTab === 'imrad' ? 'bg-indigo-600 text-slate-900 shadow' : 'text-slate-600 hover:text-slate-900'
           }`}
         >
           <CheckCircle2 className="w-3.5 h-3.5" />
@@ -59,30 +59,30 @@ export const AuditPanel: React.FC<AuditPanelProps> = ({ report, onOpenVeriLabMod
         <button
           onClick={() => setActiveTab('stats')}
           className={`py-1.5 rounded-lg font-medium transition-all flex items-center justify-center gap-1.5 ${
-            activeTab === 'stats' ? 'bg-indigo-600 text-white shadow' : 'text-slate-600 hover:text-slate-900'
+            activeTab === 'stats' ? 'bg-indigo-600 text-slate-900 shadow' : 'text-slate-600 hover:text-slate-900'
           }`}
         >
-          <BarChart3 className="w-3.5 h-3.5 text-emerald-400" />
+          <BarChart3 className="w-3.5 h-3.5 text-emerald-700" />
           <span className="hidden sm:inline">Statistik</span>
         </button>
 
         <button
           onClick={() => setActiveTab('citations')}
           className={`py-1.5 rounded-lg font-medium transition-all flex items-center justify-center gap-1.5 ${
-            activeTab === 'citations' ? 'bg-indigo-600 text-white shadow' : 'text-slate-600 hover:text-slate-900'
+            activeTab === 'citations' ? 'bg-indigo-600 text-slate-900 shadow' : 'text-slate-600 hover:text-slate-900'
           }`}
         >
-          <BookmarkCheck className="w-3.5 h-3.5 text-cyan-400" />
+          <BookmarkCheck className="w-3.5 h-3.5 text-teal-700 font-bold" />
           <span className="hidden sm:inline">Sitasi</span>
         </button>
 
         <button
           onClick={() => setActiveTab('journal')}
           className={`py-1.5 rounded-lg font-medium transition-all flex items-center justify-center gap-1.5 ${
-            activeTab === 'journal' ? 'bg-indigo-600 text-white shadow' : 'text-slate-600 hover:text-slate-900'
+            activeTab === 'journal' ? 'bg-indigo-600 text-slate-900 shadow' : 'text-slate-600 hover:text-slate-900'
           }`}
         >
-          <Award className="w-3.5 h-3.5 text-amber-400" />
+          <Award className="w-3.5 h-3.5 text-amber-700 font-bold" />
           <span className="hidden sm:inline">Jurnal</span>
         </button>
       </div>
@@ -92,7 +92,7 @@ export const AuditPanel: React.FC<AuditPanelProps> = ({ report, onOpenVeriLabMod
         <div className="flex-1 overflow-y-auto space-y-2.5 pr-1">
           <div className="flex items-center justify-between text-xs text-slate-600 mb-2">
             <span>Daftar Periksa Struktur IMRaD</span>
-            <span className="text-emerald-400 font-mono font-semibold">
+            <span className="text-emerald-700 font-mono font-bold">
               {report.structuralChecks.filter(c => c.passed).length}/{report.structuralChecks.length} Terpenuhi
             </span>
           </div>
@@ -108,9 +108,9 @@ export const AuditPanel: React.FC<AuditPanelProps> = ({ report, onOpenVeriLabMod
             >
               <div className="flex items-start gap-2.5">
                 {item.passed ? (
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
                 ) : (
-                  <AlertTriangle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                  <AlertTriangle className="w-4 h-4 text-amber-700 font-bold shrink-0 mt-0.5" />
                 )}
                 <div className="flex-1">
                   <div className="flex items-center justify-between">
@@ -132,12 +132,12 @@ export const AuditPanel: React.FC<AuditPanelProps> = ({ report, onOpenVeriLabMod
       {/* Tab 2: Statistical Findings & VeriLab AI Engine */}
       {activeTab === 'stats' && (
         <div className="flex-1 overflow-y-auto space-y-3 pr-1">
-          <div className="p-3 rounded-xl bg-gradient-to-r from-emerald-950/50 to-teal-950/30 border border-emerald-500/30 flex items-center justify-between">
+          <div className="p-3 rounded-xl bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-200 flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <Zap className="w-4 h-4 text-emerald-400" />
+              <Zap className="w-4 h-4 text-emerald-700" />
               <div>
-                <div className="text-xs font-bold text-white">VeriLab AI Engine Bridge</div>
-                <div className="text-[10px] text-emerald-300">verilab-api.onrender.com (Docker Microservice)</div>
+                <div className="text-xs font-bold text-slate-900">VeriLab AI Engine Bridge</div>
+                <div className="text-[10px] text-emerald-800">verilab-api.onrender.com (Docker Microservice)</div>
               </div>
             </div>
             <button
@@ -161,7 +161,7 @@ export const AuditPanel: React.FC<AuditPanelProps> = ({ report, onOpenVeriLabMod
             report.statisticalFindings.map((finding, idx) => (
               <div key={idx} className="p-3 rounded-xl bg-slate-50/70 border border-slate-200 space-y-1">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono font-bold text-emerald-400 bg-emerald-950/50 px-2 py-0.5 rounded border border-emerald-500/30">
+                  <span className="text-xs font-mono font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded border border-emerald-500/30">
                     {finding.raw}
                   </span>
                   <span className="text-[10px] font-semibold text-slate-700">
@@ -182,7 +182,7 @@ export const AuditPanel: React.FC<AuditPanelProps> = ({ report, onOpenVeriLabMod
         <div className="flex-1 overflow-y-auto space-y-2.5 pr-1">
           <div className="flex items-center justify-between text-xs text-slate-600 mb-1">
             <span>Pemeriksaan Sitasi In-Text vs Daftar Pustaka</span>
-            <span className="text-xs font-mono font-semibold text-cyan-400">
+            <span className="text-xs font-mono font-semibold text-teal-700 font-bold">
               {report.citations.filter(c => c.status === 'matched').length} Cocok
             </span>
           </div>
@@ -200,9 +200,9 @@ export const AuditPanel: React.FC<AuditPanelProps> = ({ report, onOpenVeriLabMod
             >
               <div className="flex items-center gap-2 truncate pr-2">
                 {c.status === 'matched' ? (
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-700 shrink-0" />
                 ) : (
-                  <AlertTriangle className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                  <AlertTriangle className="w-3.5 h-3.5 text-amber-700 font-bold shrink-0" />
                 )}
                 <span className="font-mono text-[11px] truncate">{c.citation}</span>
               </div>
@@ -222,15 +222,15 @@ export const AuditPanel: React.FC<AuditPanelProps> = ({ report, onOpenVeriLabMod
       {activeTab === 'journal' && (
         <div className="flex-1 overflow-y-auto space-y-3 pr-1 text-xs">
           <div className="p-3.5 rounded-xl bg-slate-50/80 border border-slate-200 space-y-2">
-            <div className="text-[11px] font-mono text-amber-400 uppercase font-bold">Rekomendasi Tingkat Publikasi</div>
+            <div className="text-[11px] font-mono text-amber-700 font-bold uppercase font-bold">Rekomendasi Tingkat Publikasi</div>
             <div className="grid grid-cols-2 gap-2">
-              <div className="p-2.5 rounded-lg bg-indigo-950/30 border border-indigo-500/20 text-center">
+              <div className="p-2.5 rounded-lg bg-indigo-50 border border-indigo-200 text-center">
                 <div className="text-[10px] text-slate-600">Target Nasional</div>
-                <div className="font-bold text-indigo-300 mt-0.5">{report.journalReadiness.sintaTarget}</div>
+                <div className="font-bold text-indigo-800 font-bold mt-0.5">{report.journalReadiness.sintaTarget}</div>
               </div>
-              <div className="p-2.5 rounded-lg bg-emerald-950/30 border border-emerald-500/20 text-center">
+              <div className="p-2.5 rounded-lg bg-emerald-50 border border-emerald-200 text-center">
                 <div className="text-[10px] text-slate-600">Target Internasional</div>
-                <div className="font-bold text-emerald-300 mt-0.5">{report.journalReadiness.scopusTarget}</div>
+                <div className="font-bold text-emerald-800 mt-0.5">{report.journalReadiness.scopusTarget}</div>
               </div>
             </div>
           </div>
@@ -245,17 +245,17 @@ export const AuditPanel: React.FC<AuditPanelProps> = ({ report, onOpenVeriLabMod
 
             <div className="p-2.5 rounded-xl bg-slate-50/60 border border-slate-200 flex items-center justify-between">
               <span>Verifikasi Bukti Empiris &amp; Statistik</span>
-              <span className="font-mono font-bold text-emerald-400">{report.statsScore}%</span>
+              <span className="font-mono font-bold text-emerald-700">{report.statsScore}%</span>
             </div>
 
             <div className="p-2.5 rounded-xl bg-slate-50/60 border border-slate-200 flex items-center justify-between">
               <span>Konsistensi Sitasi &amp; Referensi</span>
-              <span className="font-mono font-bold text-cyan-400">{report.citationScore}%</span>
+              <span className="font-mono font-bold text-teal-700 font-bold">{report.citationScore}%</span>
             </div>
 
             <div className="p-2.5 rounded-xl bg-slate-50/60 border border-slate-200 flex items-center justify-between">
               <span>Formalitas Nada Akademik</span>
-              <span className="font-mono font-bold text-purple-400">{report.formalityScore}%</span>
+              <span className="font-mono font-bold text-purple-700 font-bold">{report.formalityScore}%</span>
             </div>
           </div>
 

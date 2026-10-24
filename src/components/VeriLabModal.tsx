@@ -53,7 +53,7 @@ export const VeriLabModal: React.FC<VeriLabModalProps> = ({ isOpen, onClose }) =
 
         {/* Header */}
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+          <div className="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center text-emerald-700 font-bold">
             <Server className="w-5 h-5" />
           </div>
           <div>
@@ -65,7 +65,7 @@ export const VeriLabModal: React.FC<VeriLabModalProps> = ({ isOpen, onClose }) =
         {/* Endpoint Info */}
         <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 font-mono text-xs text-slate-700 space-y-1">
           <div className="text-[10px] text-slate-500 uppercase">Target Endpoint:</div>
-          <div className="text-emerald-400 font-semibold break-all">
+          <div className="text-emerald-700 font-bold font-semibold break-all">
             https://verilab-api.onrender.com/api/v1/health
           </div>
         </div>
@@ -79,13 +79,13 @@ export const VeriLabModal: React.FC<VeriLabModalProps> = ({ isOpen, onClose }) =
         )}
 
         {status === 'success' && (
-          <div className="p-4 rounded-xl bg-emerald-950/30 border border-emerald-500/30 space-y-2 text-xs">
+          <div className="p-4 rounded-xl bg-emerald-50 border border-emerald-200 space-y-2 text-xs">
             <div className="flex items-center justify-between">
-              <span className="flex items-center gap-1.5 text-emerald-300 font-bold">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+              <span className="flex items-center gap-1.5 text-emerald-800 font-bold">
+                <CheckCircle2 className="w-4 h-4 text-emerald-700 font-bold" />
                 Backend Terhubung &amp; Sehat (Healthy)
               </span>
-              <span className="font-mono text-[11px] px-2 py-0.5 rounded bg-emerald-900/60 text-emerald-200">
+              <span className="font-mono text-[11px] px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold">
                 {latency} ms
               </span>
             </div>
@@ -96,8 +96,8 @@ export const VeriLabModal: React.FC<VeriLabModalProps> = ({ isOpen, onClose }) =
         )}
 
         {status === 'error' && (
-          <div className="p-4 rounded-xl bg-amber-950/30 border border-amber-500/30 space-y-2 text-xs">
-            <div className="flex items-center gap-1.5 text-amber-300 font-bold">
+          <div className="p-4 rounded-xl bg-amber-50 border border-amber-200 space-y-2 text-xs">
+            <div className="flex items-center gap-1.5 text-amber-800 font-bold font-bold">
               <AlertCircle className="w-4 h-4 text-amber-400" />
               Instance Render Sedang Warming Up (Cold-Start)
             </div>
